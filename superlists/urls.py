@@ -6,9 +6,15 @@ urlpatterns = patterns('',
     url(r'^$', 'lists.views.home_page', name='home'),
 
     url(
-        regex=r'^lists/the-only-list-in-the-world/$',
+        regex=r'^lists/(\d+)/$',
         view='lists.views.view_list',
         name='view_list',
+    ),
+
+    url(
+        regex=r'^lists/(\d+)/add_item$',
+        view='lists.views.add_item',
+        name='add_item',
     ),
 
     url(
